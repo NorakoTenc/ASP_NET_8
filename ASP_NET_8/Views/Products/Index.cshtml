@@ -1,0 +1,32 @@
+﻿@model List<ASP_NET_8.Models.Product>
+
+@using ASP_NET_8.Models
+
+<h1>Products</h1>
+
+<h2>List View</h2>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.ID. @product.Name - @product.Price.ToString("C") (@product.CreatedDate)</li>
+    }
+</ul>
+
+<h2>Table View</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Created Date</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.ID</td>
+            <td>@product.Name</td>
+            <td>@product.Price.ToString("C")</td>
+            <td>@product.CreatedDate</td>
+        </tr>
+    }
+</table>
